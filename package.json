@@ -1,0 +1,21 @@
+{
+  "name": "project-management-platform",
+  "version": "1.0.0",
+  "description": "A Project management Platform for beginners",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [
+    "udemy",
+    "course",
+    "backend",
+    "API",
+    "creation"
+  ],
+  "author": "Ansh Pandey",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "3.6.2"
+  }
+}
