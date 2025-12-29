@@ -3,7 +3,7 @@ import cors from "cors"         //Cross Origin Resource sharing
 import cookieParser from "cookie-parser"   //TO access cookies in expressJS
 
 
-const app=express()
+const app=express()         //Creating Express application (http request handler)
 
 // Basic configurations: Using middlewares
 app.use(express.json({limit:"16kb"}))      // To accept JSON data in my application so that anyone can send me JSON data

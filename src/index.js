@@ -9,10 +9,9 @@ dotenv.config({
 
 const port = process.env.PORT || 3000   //Defining port of server
 
-
 connectDB()                     //Server will listen to port only when it gets connected to database
   .then(()=>{
-    app.listen(port, () => {     //Web server is listening on given port
+    app.listen(port, () => {     //Web server is listening on given port. Internally express does: http.createServer(app).listen(3000);
   console.log(`Example app listening on http://localhost:${port}`)
   })
   }) 
