@@ -2,7 +2,7 @@
 //Attaching Hooks and Methods to schema
 
 import mongoose,{Schema} from "mongoose"   //Since we're using mongoDB, mongoose is ORM that we need to use
-import bcrypt from "bcrypt"                //For encrypting any field of schema
+import bcrypt from "bcrypt"                //For encrypting any field of schema, bcrypt module is used
 import jwt from "jsonwebtoken"             //For creating tokenWithData (accessToken and refreshToken)
 import crypto from "crypto"                //For creating token without data, use crypto module of nodeJS
 
