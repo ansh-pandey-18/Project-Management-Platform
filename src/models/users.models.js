@@ -62,7 +62,7 @@ const userSchema=new Schema(        //Creating new Schema ({fields},{timestamps}
         }
     },
     {
-        timestamps:true              //TO access 2 more fields: CreatedAt and UpdatedAt
+        timestamps:true              //2 Fields will be autoAdded if timeStamps is true: createdAt and updatedAt
     }
 )      
 
