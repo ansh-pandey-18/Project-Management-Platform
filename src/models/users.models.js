@@ -3,8 +3,8 @@
 
 import mongoose,{Schema} from "mongoose"   //Since we're using mongoDB, mongoose is ORM that we need to use
 import bcrypt from "bcrypt"                //For encrypting any field of schema
-import jwt from "jsonwebtoken"
-import crypto from "crypto"
+import jwt from "jsonwebtoken"             //For creating tokenWithData (accessToken and refreshToken)
+import crypto from "crypto"                //For creating token without data, use crypto module of nodeJS
 
 const userSchema=new Schema(        //Creating new Schema ({fields},{timestamps})
     {
