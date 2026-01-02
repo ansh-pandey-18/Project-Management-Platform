@@ -8,18 +8,18 @@ const app=express()         //Creating Express application (http request handler
 // Basic configurations: Using middlewares
 app.use(express.json({limit:"16kb"}))      // To accept JSON data in my application so that anyone can send me JSON data
 app.use(express.urlencoded({extended:true,limit:"16kb"}))  //To accept URL encoded data in my application
-app.use(express.static("public"))   //To define static assets of webpage (which can be publicly viewable)
+app.use(express.static("public"))   //To define static assets(images, css) in webpage (which can be publicly viewable)
 
-app.use(cookieParser());            //To have access to cookies
 
 //CORS configurations
 app.use(cors({
-    origin:process.env.CORS_ORIGIN?.split(",") || "http://localhost:5173",  //Is orirgin se request aane pe server k data access kar skta hai
+    origin:process.env.CORS_ORIGIN?.split(",") || "http://localhost:5173",  //Is orirgin se request aane pe server k data access kar skta hai. CORS origin is basically a frontend url
     credentials:true,
     methods: ["GET","POST","PUT","PATCH","DELETE","OPTIONS"],    //Methods supported in request
     allowedHeaders: ["Authorization", "Content-Type"]
 }))
 
+app.use(cookieParser());            //To have access to cookies
 
 //import the routes, Define final route (acording to PRD) and serve router
 import healthCheckRouter from "./routes/heathcheck.routes.js"
