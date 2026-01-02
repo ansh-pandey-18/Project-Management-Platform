@@ -21,6 +21,7 @@ app.use(cors({
 
 app.use(cookieParser());            //To have access to cookies
 
+//3. Registering route in main app
 //import the routes, Define final route (acording to PRD) and serve router
 import healthCheckRouter from "./routes/heathcheck.routes.js"
 app.use("/api/v1/healthcheck",healthCheckRouter)  //Using middleware, defining route and passing router. Overall route will become /api/v1/healthcheck/
