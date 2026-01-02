@@ -10,3 +10,11 @@ class ApiResponse{     //These are 4 parameters that should be present whenever 
 
 export { ApiResponse }
 //Now every API response will have these fixed number of paramaters
+/*
+Using std ApiResponse:
+    return res
+    .status(200)
+    .json(
+        new ApiResponse(200,{},"Password changed successfully")
+    )
+*/

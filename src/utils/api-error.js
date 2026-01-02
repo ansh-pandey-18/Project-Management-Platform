@@ -23,3 +23,9 @@ class ApiError extends Error{
 export { ApiError }
 
 //Now every API error will have this fixed number of parameters
+/*
+Using std API error:
+    if(!user){
+        throw new ApiError(404,"Invalid Reset Token")
+    }
+*/
