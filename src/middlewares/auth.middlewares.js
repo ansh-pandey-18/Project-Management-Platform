@@ -10,7 +10,7 @@ import jwt from "jsonwebtoken"         //To decode access token
 export const verifyJWT=asyncHandler(async (req,res,next) => {
     
     //1. Access the accessToken: 2 ways- req.cookies? 
-    // Or req.header("Authorization")?.replace("Bearer ","") coz accessToken stored as Bearer AT
+    // Or req.header("Authorization")?.replace("Bearer ","") coz accessToken stored as BearerAT
     const token=req.cookies?.accessToken || req.header("Authorization")?.
     replace("Bearer ","")
 
