@@ -124,3 +124,4 @@ userSchema.methods.generateTemporaryToken=function(){
 export const User=mongoose.model("User",userSchema)
 //We can import this user anywhere to query anything from DB
 //All functionalities attached to schema can be used by every entry of DB only, not by DB model
+//Whenever you need to run query on entire DB, use User(like User.find()). When u need to run only on a particular instance of DB, use user(like user.save())
