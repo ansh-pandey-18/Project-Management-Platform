@@ -161,16 +161,9 @@ const loginUser=asyncHandler(async (req,res) => {
 //Function to Logout user 
 //In order to logout user, set RT in DB as empty and clear AT&RT from cookie
 const logoutUser=asyncHandler(async (req,res) => {
-    await User.findByIdAndUpdate(req.user._id,
-        {
-            $set:{
-                refreshToken:""
-            }
-        },
-        {
-            new:true        //Set RT as empty and get most updated data
-        }
-    )
+    const user=await User.findByIdAndUpdate(req.user?._id,{
+            refreshToken:""         //Set RT as empty
+        })
     const options={         //We'll need options to interact with cookies
         httpOnly:true,
         secure:true
