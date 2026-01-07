@@ -31,7 +31,7 @@ export const verifyJWT=asyncHandler(async (req,res,next) => {
 
     //3. Append user to request so that controllers can know which user is making request
         req.user=user
-        next()
+        next()              //Flag to move roquest to next middleware
     } catch (error) {
         throw new ApiError(401,"Invalid access token")
     }
