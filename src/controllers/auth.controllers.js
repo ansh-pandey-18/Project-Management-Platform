@@ -9,7 +9,7 @@ forgotPasswordMailgenContent,sendEmail}   from "../utils/mail.js"   //To verify 
 import jwt from "jsonwebtoken"      //To decode and verify jwt
 import crypto from "crypto"         //To create hashedToken from unHashedToken
 
-//Function for generating access and Refresh Token altogether
+//Function for generating access and Refresh Token altogether for given userId
 const generateAccessAndRefreshToken=async(userId) => {  //Once user gets entered in DB, he gets userId
     try {
         const newUser=await User.findById(userId)           //With all DB operations, use await coz DB is always in another continent
