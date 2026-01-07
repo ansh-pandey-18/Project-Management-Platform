@@ -298,17 +298,17 @@ const refreshAccessToken=asyncHandler(async (req,res)=>{
     const incomingRefreshToken=req.cookies.refreshToken||req.body.refreshToken
     
     if(!incomingRefreshToken){
-        throw new ApiError(409,"Unauthorized Access")
+        throw new ApiError(401,"Unauthorized Access")
     }
 
-    //2. Decode and verify it with refreshToken stored in DB (using jwt.verify())
+    //2. Decode to find user(using jwt.verify()) and verify it with refreshToken of user stored in DB (coz we need to extract user from DB from id stored in refreshToken)
     try {
         //Since its token with data,thats why needed to decode then match
         const decodedToken=jwt.verify(incomingRefreshToken,process.env.REFRESH_TOKEN_SECRET)
 
         const user=await User.findById(decodedToken._id)
         if(!user){
-            throw new ApiError(401,"Invalid Refresh Token")
+            throw new ApiError(407,"Invalid Refresh Token")
         }
 
         if(incomingRefreshToken!==user.refreshToken){
