@@ -301,7 +301,7 @@ const refreshAccessToken=asyncHandler(async (req,res)=>{
         throw new ApiError(409,"Unauthorized Access")
     }
 
-    //2. Decode and verify it with refreshToken stored in DB
+    //2. Decode and verify it with refreshToken stored in DB (using jwt.verify())
     try {
         //Since its token with data,thats why needed to decode then match
         const decodedToken=jwt.verify(incomingRefreshToken,process.env.REFRESH_TOKEN_SECRET)
