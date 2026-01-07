@@ -1,4 +1,4 @@
-//Middleware to check is this request authenticated or not
+//Middleware to check is this request authenticated or not and appending user to request
 //By checking is this request contains valid AT or not
 
 import {User} from "../models/users.models.js"      //TO verify accessToken and extract payload from accessToken
